@@ -1,5 +1,6 @@
-package com.phudt.dao;
+package com.phudt.dao.impl;
 
+import com.phudt.dao.CustomerDAO;
 import com.phudt.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,7 +15,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class CustomerDAOImpl implements CustomerDAO{
+public class CustomerDAOImpl implements CustomerDAO {
 
     @Autowired
     private SessionFactory sessionFactory;

@@ -1,6 +1,7 @@
 package com.phudt.controller;
 
 
+import com.phudt.entity.Asset;
 import com.phudt.entity.Customer;
 import com.phudt.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,9 @@ public class CustomerController {
 
     @GetMapping("/showForm")
     public String showFormForAdd(Model theModel) {
-        Customer theCustomer = new Customer();
-        theModel.addAttribute("customer", theCustomer);
-        return "customer-form";
+        Asset asset = new Asset();
+        theModel.addAttribute("customer", asset);
+        return "editDocument";
     }
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {

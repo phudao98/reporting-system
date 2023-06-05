@@ -1,23 +1,19 @@
 package com.phudt.entity;
 
-
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "Users")
 public class User {
+    private String username;
+    private String password;
+    private boolean enabled;
 
     @Id
-    private String username;
-
-    @Column(name = "password", nullable = false)
-    private String password;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
-    private Set<Authorities> authorities = new HashSet<>();
-
+    @Column(name = "Username", length = 36, nullable = false)
     public String getUsername() {
         return username;
     }
@@ -26,6 +22,7 @@ public class User {
         this.username = username;
     }
 
+    @Column(name = "Password", nullable = false)
     public String getPassword() {
         return password;
     }
@@ -34,11 +31,13 @@ public class User {
         this.password = password;
     }
 
-    public Set<Authorities> getAuthorities() {
-        return authorities;
+    @Column(name = "enabled", nullable = false)
+    public boolean isEnabled() {
+        return enabled;
     }
 
-    public void setAuthorities(Set<Authorities> authorities) {
-        this.authorities = authorities;
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
+
 }

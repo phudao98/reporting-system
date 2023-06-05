@@ -1,7 +1,8 @@
-package com.phudt.service;
+package com.phudt.service.impl;
 
 import com.phudt.dao.CustomerDAO;
 import com.phudt.entity.Customer;
+import com.phudt.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
